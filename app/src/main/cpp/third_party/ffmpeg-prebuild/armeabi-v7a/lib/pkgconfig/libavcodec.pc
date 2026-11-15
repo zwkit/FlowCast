@@ -1,0 +1,14 @@
+prefix=/c/Users/zou/Doubao/chats/2026-10-17/new-chat/.devtools/ffmpeg-prebuild-arm
+exec_prefix=${prefix}
+libdir=/c/Users/zou/Doubao/chats/2026-10-17/new-chat/.devtools/ffmpeg-prebuild-arm/lib
+includedir=/c/Users/zou/Doubao/chats/2026-10-17/new-chat/.devtools/ffmpeg-prebuild-arm/include
+
+Name: libavcodec
+Description: FFmpeg codec library
+Version: 62.28.102
+Requires: libavutil >= 60.26.102
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavcodec -pthread -lm -latomic
+Libs.private: 
+Cflags: -I${includedir}

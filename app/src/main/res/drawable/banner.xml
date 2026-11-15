@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FlowCast · Android TV 启动横幅（320x180）
+  与启动图标同款「斜叠双屏极简 · 白底」设计（2026-10-21 定稿）：
+  纯白卡底 + 后屏 #85B7EB（右上露角）+ 前屏 #185FA5 + 白色播放三角；
+  无外框、无高亮条、无底座、无无线信号元素。
+
+  图形复用 ic_launcher_foreground 的 182 viewport 路径。
+  缩放倍数按「横幅只显示图形、不像图标那样有整卡留白」来定：
+  索尼 BRAVIA + 当贝桌面实测，launcher 渲染的是 android:banner 而非 android:icon
+  （白卡实测 240x135 px，正是 16:9），所以横幅里图形必须自己填满画面。
+  scale 1.8 ⇒ 图形 187x130 单位 = 横幅的 58% x 72%，居中后四边留白
+  左/右 66 单位(21%)、上/下 25 单位(14%)，不会被桌面圆角裁掉。
+  （旧值 0.6593 只占 21% x 26%，在电视上看来就是「一大块白卡中间一个小图标」。）
+
+  <group> 的变换顺序是 先 scale 后 translate，故：
+    translate = 画布中心 - scale * 图形中心 = (160,90) - 1.8*(91,91)
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+
+    <!-- 白底 -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M0,0h320v180H0z" />
+
+    <!-- 图标图形（182 viewport × 1.8 ⇒ 187x130 单位，居中于 320x180） -->
+    <group
+        android:scaleX="1.8"
+        android:scaleY="1.8"
+        android:translateX="-3.8"
+        android:translateY="-73.8">
+        <!-- 后屏（右上露角：顶条 16px + 右条 20px） -->
+        <path
+            android:fillColor="#85B7EB"
+            android:pathData="M71,55H131A12,12 0 0 1 143,67V99A12,12 0 0 1 131,111H71A12,12 0 0 1 59,99V67A12,12 0 0 1 71,55Z" />
+        <!-- 前屏 -->
+        <path
+            android:fillColor="#185FA5"
+            android:pathData="M51,71H111A12,12 0 0 1 123,83V115A12,12 0 0 1 111,127H51A12,12 0 0 1 39,115V83A12,12 0 0 1 51,71Z" />
+        <!-- 播放三角（bbox 中心与前屏中心重合） -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M72,85L72,113L90,99Z" />
+    </group>
+</vector>

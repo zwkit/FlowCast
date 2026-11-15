@@ -1,0 +1,14 @@
+prefix=/c/Users/zou/Doubao/chats/2026-10-17/new-chat/.devtools/ffmpeg-prebuild
+exec_prefix=${prefix}
+libdir=/c/Users/zou/Doubao/chats/2026-10-17/new-chat/.devtools/ffmpeg-prebuild/lib
+includedir=/c/Users/zou/Doubao/chats/2026-10-17/new-chat/.devtools/ffmpeg-prebuild/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 60.26.102
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil -lm -latomic -landroid -lmediandk -pthread
+Libs.private: 
+Cflags: -I${includedir}

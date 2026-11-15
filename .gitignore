@@ -1,0 +1,45 @@
+*.iml
+.gradle/
+.kotlin/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/app/build/
+/captures
+.externalNativeBuild/
+.cxx/
+
+*.jks
+*.keystore
+release.keystore
+*.apk
+*.aab
+
+# uiautomator dumps and other local debug captures
+debug-artifacts/
+
+# WorkBuddy 工作区数据（记忆/会话索引，勿入仓库）
+.workbuddy/
+
+# 本地签名密钥 / 自签证书 / 运行日志 —— 绝不入库
+*.crt
+*.key
+*.pem
+*.p12
+*.log
+/local.properties.bak
+
+# 编译产物 / 调试截图 / 发布包（由 CI 与 GitHub Release 提供）
+outputs/
+dist/
+*.exe
+*.pdb
+*.obj
+*.res
+windows-client/build/
+
+# FFmpeg 上游全量源码（约 105MB）：仅在「无预编译库的 POSIX 源码构建」时才需要，
+# 默认构建走 third_party/ffmpeg-prebuild 预编译静态库，故不纳入版本控制。
+# 需要源码构建时按 BuildFFmpeg.cmake 的报错指引获取（FDH2/UxPlay 同源的 FFmpeg 上游）。
+/app/src/main/cpp/third_party/ffmpeg/

@@ -1,0 +1,5 @@
+- First release as FlowCast (无感投屏) — rebranded distribution of the open-source jqssun/android-airplay-server project, applicationId io.github.zwkit.flowcast
+- Screen mirroring with H.264/H.265 decoding and audio streaming (AAC-ELD/AAC-LC/ALAC)
+- HLS video playback with downloads and remote controls; music playback with track info, cover art and DACP remote
+- Android TV D-pad navigation, Picture-in-Picture, optional PIN, debug overlay, media session notification controls, wired USB secondary display
+- Full Simplified Chinese, Traditional Chinese (Hong Kong/Taiwan) and English UI

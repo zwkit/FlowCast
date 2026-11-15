@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FlowCast 图标 · 背景层（白底版，2026-10-21 晚用户定稿）
+  原版图标底色即纯白，改白底与原版观感一致；
+  同时规避 Android 8.0/8.1（API 26/27）启动器把透明背景渲染为黑色的平台缺陷
+  （模拟器实测透明底显黑即此 bug）。图形仍全部由前景层承载，本层只提供白卡底。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M0,0h108v108H0z" />
+</vector>

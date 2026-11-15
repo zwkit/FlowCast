@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FlowCast 图标 · 单色层（主题图标 / Themed Icon，方案 C）
+  双屏剪影 union + 播放三角镂空（nonzero 反向环绕打孔），与前景层同心同形
+  坐标系：182x182 viewport
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="182"
+    android:viewportHeight="182">
+    <path
+        android:fillColor="#000000"
+        android:pathData="M71,55H131A12,12 0 0 1 143,67V99A12,12 0 0 1 131,111H71A12,12 0 0 1 59,99V67A12,12 0 0 1 71,55ZM51,71H111A12,12 0 0 1 123,83V115A12,12 0 0 1 111,127H51A12,12 0 0 1 39,115V83A12,12 0 0 1 51,71ZM72,85L72,113L90,99Z" />
+</vector>

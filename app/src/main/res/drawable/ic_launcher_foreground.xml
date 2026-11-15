@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FlowCast 图标 · 前景层（方案 C：透明底 + 无框，用户 2026-10-21 选定）
+  设计：斜叠双屏 + 播放三角；无外框、无高亮条、无底座、无背景
+  几何沿用定稿底盘（双屏错位 (20,-16)、屏身 84×56、三角 bbox 中心与前屏中心重合），
+  去外框后将双屏整体居中（框中心 → 双屏 bbox 中心，偏移 (+4,-8)）
+  坐标系：182x182 viewport，双屏 bbox 104x72 单位居中
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="182"
+    android:viewportHeight="182">
+    <!-- 后屏（右上露角：顶条 16px + 右条 20px） -->
+    <path
+        android:fillColor="#85B7EB"
+        android:pathData="M71,55H131A12,12 0 0 1 143,67V99A12,12 0 0 1 131,111H71A12,12 0 0 1 59,99V67A12,12 0 0 1 71,55Z" />
+    <!-- 前屏 -->
+    <path
+        android:fillColor="#185FA5"
+        android:pathData="M51,71H111A12,12 0 0 1 123,83V115A12,12 0 0 1 111,127H51A12,12 0 0 1 39,115V83A12,12 0 0 1 51,71Z" />
+    <!-- 播放三角（bbox 中心与前屏中心重合） -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M72,85L72,113L90,99Z" />
+</vector>

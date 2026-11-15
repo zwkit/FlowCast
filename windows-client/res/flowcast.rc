@@ -1,0 +1,49 @@
+// Icons for the exe itself: Explorer, the taskbar, Alt-Tab and the shortcut
+// arrow all read this resource. The .ico is produced by
+//   flowcast.exe --make-icon=res\flowcast.ico
+// from the same GDI+ drawing code that paints the window, so the mark on the
+// file and the mark on the title bar is one drawing.
+#pragma code_page(65001)
+
+#include <windows.h>
+
+1 ICON "flowcast.ico"
+
+// Windows treats a bare exe with no version block as an anonymous blob: Explorer
+// has nothing to print under Properties, and every "unknown publisher" heuristic
+// gets one less signal to work with. These strings do not make the binary
+// trusted - only a code-signing certificate does that - but they do make it
+// identify itself, and they let a support screenshot be matched to a build.
+#define FC_VER_MAJOR 2
+#define FC_VER_MINOR 1
+#define FC_VER_PATCH 1
+#define FC_VER_BUILD 0
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION FC_VER_MAJOR, FC_VER_MINOR, FC_VER_PATCH, FC_VER_BUILD
+PRODUCTVERSION FC_VER_MAJOR, FC_VER_MINOR, FC_VER_PATCH, FC_VER_BUILD
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x0L
+FILEOS 0x40004L
+FILETYPE 0x1L
+FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "CompanyName",      L"FlowCast"
+            VALUE "FileDescription",  L"FlowCast 投屏客户端"
+            VALUE "FileVersion",      L"2.1.1.0"
+            VALUE "InternalName",     L"flowcast"
+            VALUE "OriginalFilename", L"flowcast.exe"
+            VALUE "ProductName",      L"FlowCast"
+            VALUE "ProductVersion",   L"2.1.1"
+            VALUE "LegalCopyright",   L"MIT licensed"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END

@@ -1,0 +1,64 @@
+diff --git a/lib/raop_rtp.c b/lib/raop_rtp.c
+--- a/lib/raop_rtp.c
++++ b/lib/raop_rtp.c
+@@ -40,6 +40,12 @@
+ 
+ #define DELAY_AAC  0.20 //empirical, matches audio latency of about -0.25 sec after first clock sync event
+ 
++/* forward jump in the received audio seqnum that counts as a stream restart
++ * (sender switched content or seeked): large enough to clear the AAC-ELD
++ * redundancy pattern (+-1) and ordinary reordering, small enough to catch a
++ * restart whose new seqnum base lands close to the old one */
++#define AUDIO_SEQNUM_RESTART_JUMP 8
++
+ struct raop_rtp_s {
+     logger_t *logger;
+     raop_callbacks_t callbacks;
+@@ -387,7 +393,19 @@
+     bool got_remote_control_saddr = false;
+     uint64_t video_arrival_offset = 0;
+ 
+-    /* initial audio stream has no data */    
++    /* audio stream restart detection: mirroring audio keeps a real-time pts
++     * clock across content switches and seeks, so the jitter buffer's
++     * pts-discontinuity flush never fires for them and the old content's
++     * buffered tail would play out first (heard as a brief snippet of the
++     * previous video). a forward jump in the received seqnum is the sender
++     * restarting its packet numbering: ask for a flush as soon as the jump is
++     * seen, before the new packets are even enqueued. the AAC-ELD redundancy
++     * pattern (each frame repeated) only ever moves the seqnum by +-1, and
++     * ordinary reordering by a few, so the threshold stays well clear of both */
++    int have_last_seqnum = 0;
++    unsigned short last_seqnum = 0;
++
++    /* initial audio stream has no data */
+     unsigned char no_data_marker[] = {0x00, 0x68, 0x34, 0x00 };
+ 
+     assert(raop_rtp);
+@@ -577,6 +595,26 @@
+                 continue;
+             }
+ 
++            /* seqnum jump = sender restarted the audio stream (content switch /
++             * seek) or dropped a burst of packets: flush the jitter buffer's
++             * old timeline before the new packets reach it */
++            {
++                unsigned short seqnum = byteutils_get_short_be(packet, 2);
++                if (have_last_seqnum) {
++                    int jump = (int)(int16_t)(seqnum - last_seqnum);
++                    if (jump >= AUDIO_SEQNUM_RESTART_JUMP) {
++                        logger_log(raop_rtp->logger, LOGGER_WARNING,
++                                   "raop_rtp: audio seqnum jumped +%d (%u -> %u): stream restart, flushing audio",
++                                   jump, last_seqnum, seqnum);
++                        if (raop_rtp->callbacks.audio_flush) {
++                            raop_rtp->callbacks.audio_flush(raop_rtp->callbacks.cls);
++                        }
++                    }
++                }
++                last_seqnum = seqnum;
++                have_last_seqnum = 1;
++            }
++
+             if (!raop_rtp->initial_sync &&  raop_rtp->ct == 8 && video_arrival_offset) {
+                 /* estimate a fake initial remote timestamp for video  synchronization  with AAC audio before the first rtp sync */
+                  uint64_t ts = raop_ntp_get_local_time() - video_arrival_offset;

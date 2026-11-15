@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  常驻通知的状态栏小图标：白色「屏幕 + 播放」剪影。
+  屏幕顺时针、播放三角逆时针（nonzero 规则下打孔），孔位透出状态栏底色。
+  24dp，纯白填充，由系统按状态栏明暗自动着色。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M5,3.5H19A2.5,2.5 0 0,1 21.5,6V14A2.5,2.5 0 0,1 19,16.5H5A2.5,2.5 0 0,1 2.5,14V6A2.5,2.5 0 0,1 5,3.5ZM10,6.5L10,13.5L16,10Z" />
+</vector>

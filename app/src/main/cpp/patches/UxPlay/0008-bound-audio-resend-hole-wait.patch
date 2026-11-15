@@ -1,0 +1,44 @@
+diff --git a/lib/raop_buffer.c b/lib/raop_buffer.c
+--- a/lib/raop_buffer.c
++++ b/lib/raop_buffer.c
+@@ -35,6 +35,13 @@
+ 
+ #define RAOP_BUFFER_LENGTH 256
+ 
++/* packets to wait for a resend before giving up on a hole. ~16 packets is
++ * ~175ms at AAC-ELD (10.9ms/packet) and ~370ms at AAC-LC (23.2ms/packet):
++ * far above LAN resend RTT, far below the audible audio-stall threshold.
++ * the stock behavior waits for a full 256-entry buffer behind the hole,
++ * which starves audio for seconds whenever the sender will not refill it */
++#define RAOP_BUFFER_HOLE_SKIP_PACKETS 16
++
+ typedef struct {
+     /* Data available */
+     int filled;
+@@ -241,12 +248,23 @@
+     if (no_resend) {
+         /* If we do no resends, always return the first entry */
+     } else if (!entry->filled) {
+-        /* Check how much we have space left in the buffer */
+-        if (entry_count < RAOP_BUFFER_LENGTH) {
++        /* Wait only a bounded number of packets for the resend. A hole the
++         * sender will not refill (stream-restart boundary, or a resend the
++         * sender ignores while restarting its audio pipeline) must not stall
++         * playout until the 256-entry overrun path: with ~11ms AAC-ELD packets
++         * that is ~2.8s of audio starvation, heard as "no sound for 2-3
++         * seconds" after a seek or content switch. Skipping turns one missing
++         * packet into a ~11ms silence the jitter buffer fills instead. */
++        if (entry_count < RAOP_BUFFER_HOLE_SKIP_PACKETS) {
+             /* Return nothing and hope resend gets on time */
+             return NULL;
+         }
+-        /* Risk of buffer overrun, return empty buffer */
++        if (entry_count < RAOP_BUFFER_LENGTH) {
++            logger_log(raop_buffer->logger, LOGGER_WARNING,
++                       "raop_buffer: hole at seqnum %u skipped after %d packets (resend not honored)",
++                       raop_buffer->first_seqnum, entry_count);
++        }
++        /* Buffer nearly overruning too: fall through and skip the hole */
+     }
+ 
+     /* Update buffer and validate entry */

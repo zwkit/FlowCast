@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Android armeabi-v7a C++ compiler wrapper for FFmpeg -> NDK Windows clang++.exe
+exec "/c/Users/zou/Doubao/chats/2026-10-17/new-chat/.devtools/android-sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe" --target=armv7a-linux-androideabi24 --sysroot="/c/Users/zou/Doubao/chats/2026-10-17/new-chat/.devtools/android-sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/windows-x86_64/sysroot" "$@"

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  繁體中文（香港）· 由 values-zh-rCN 經 OpenCC（s2hk）轉換生成，2026-10-21
+  修改文案請改 values-zh-rCN 後重新轉換，或直接手改本文件（勿同時改兩處）。
+-->
+<resources>
+    <string name="app_name">無感投屏</string>
+
+    <!-- Notification -->
+    <string name="notification_channel">FlowCast 服務</string>
+    <string name="notification_title">FlowCast 服務器運行中</string>
+    <string name="notification_text">正在接收投屏連接</string>
+    <string name="notification_pin_title">需要投屏 PIN</string>
+    <string name="notification_pin_text">PIN：%1$s</string>
+    <string name="notification_video_title">AirPlay 視頻</string>
+    <string name="notification_video_text">正在播放發送端視頻</string>
+    <string name="notification_mirror_title">屏幕鏡像</string>
+    <string name="notification_mirror_text">正在鏡像設備屏幕</string>
+    <string name="stop_service">停止</string>
+
+    <!-- Tabs -->
+    <string name="tab_overview">概覽</string>
+    <string name="tab_logs">日誌</string>
+    <string name="tab_settings">設置</string>
+
+    <!-- Overview -->
+    <string name="server_stopped">服務器已停止</string>
+    <string name="waiting_for_connection">等待連接…</string>
+    <string name="waiting_for_playback">請在發送端點擊開始…</string>
+    <string name="error_starting_server">啓動服務器出錯</string>
+    <string name="connected_count">%d 已連接</string>
+    <string name="error_label">錯誤</string>
+    <string name="stopped_label">已停止</string>
+    <string name="btn_start">開始</string>
+    <string name="btn_stop">停止</string>
+    <string name="btn_allow">允許</string>
+    <string name="btn_open_settings">打開設置</string>
+    <string name="local_network_label">需要訪問附近設備</string>
+    <string name="local_network_desc">允許訪問附近設備，以便 AirPlay 設備發現並連接到此設備</string>
+    <string name="unknown_track">未知</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_pip">畫中畫</string>
+    <string name="cd_fullscreen">全屏</string>
+    <string name="cd_exit_fullscreen">退出全屏</string>
+    <string name="cd_cover_art">封面</string>
+    <string name="cd_play_pause">播放/暫停</string>
+    <string name="cd_rewind">快退</string>
+    <string name="cd_fast_forward">快進</string>
+    <string name="cd_volume_down">音量減</string>
+    <string name="cd_volume_up">音量加</string>
+    <string name="cd_mute">靜音</string>
+    <string name="cd_download">下載視頻</string>
+    <string name="cd_cancel_download">取消下載</string>
+
+    <!-- Video download -->
+    <string name="download_saved">已保存到 %1$s</string>
+    <string name="download_failed">下載失敗</string>
+
+    <!-- Player gestures -->
+    <string name="gesture_seek_seconds">%1$d 秒</string>
+    <string name="seconds_short">%1$ds</string>
+    <string name="select_playback_speed">播放速度</string>
+    <string name="cd_reset_speed">重置速度</string>
+    <string name="skip_silence">跳過靜音</string>
+
+    <!-- Player controls -->
+    <string name="cd_back">返回</string>
+    <string name="cd_copy_url">複製視頻鏈接</string>
+    <string name="cd_rotate">旋轉屏幕</string>
+    <string name="cd_lock_controls">鎖定控件</string>
+    <string name="cd_unlock_controls">解鎖控件</string>
+    <string name="scale_best_fit">適應屏幕</string>
+    <string name="scale_stretch">拉伸</string>
+    <string name="scale_crop">裁剪</string>
+    <string name="scale_hundred_percent">100%</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_pin_title">AirPlay PIN</string>
+    <string name="btn_ok">確定</string>
+    <string name="btn_later">稍後</string>
+    <string name="overlay_permission_title">允許投屏時自動打開</string>
+    <string name="overlay_permission_message">要在手機投屏到本機時自動打開此應用，請授予「在其他應用上層顯示」權限。</string>
+
+    <!-- Logs screen -->
+    <string name="btn_export">導出</string>
+    <string name="btn_clear">清空</string>
+    <string name="export_logs_chooser_title">導出日誌</string>
+
+    <!-- Settings sections -->
+    <string name="section_server">服務器</string>
+    <string name="section_connection">連接</string>
+    <string name="section_display">顯示</string>
+    <string name="section_decode">解碼</string>
+    <string name="section_developer">開發者</string>
+    <string name="section_about">關於</string>
+
+    <!-- 设置：关于 -->
+    <string name="setting_about">關於本應用</string>
+    <string name="setting_about_desc">查看版本、版權等信息</string>
+    <string name="about_version">版本 %1$s（構建 %2$d）</string>
+    <string name="about_copyright">基於開源工程 jqssun/android-airplay-server</string>
+    <string name="setting_quit">退出應用</string>
+    <string name="setting_quit_desc">停止接收服務並關閉應用</string>
+    <string name="setting_quit_confirm">退出後將停止接收服務，發送端無法再發現本裝置，目前投屏亦會結束。確定退出？</string>
+    <string name="cast_exited">已退出投屏</string>
+    <string name="press_back_again_to_exit">再按一次返回鍵退回背景</string>
+    <string name="press_back_again_to_exit_cast">再按一次返回鍵退出投屏</string>
+
+    <!-- Settings: Language -->
+    <string name="setting_language">語言</string>
+    <string name="setting_language_desc">選擇應用界面語言</string>
+    <string name="language_zh">簡體中文</string>
+    <string name="language_en">English</string>
+    <string name="language_system">跟隨系統</string>
+
+    <!-- Settings: Server -->
+    <string name="setting_server_name">服務器名稱</string>
+    <string name="setting_server_port">服務器端口</string>
+    <string name="setting_auto_start">自動啓動服務器</string>
+    <string name="setting_auto_start_desc">應用啓動時自動啓動 AirPlay 服務器</string>
+    <string name="setting_boot_auto_start">開機自動啓動</string>
+    <string name="setting_boot_auto_start_desc">設備啓動時自動啓動 AirPlay 服務器</string>
+    <string name="setting_run_in_background">後台運行</string>
+    <string name="setting_run_in_background_desc">離開應用後繼續保持服務器運行</string>
+
+    <!-- Settings: Connection -->
+    <string name="setting_require_pin">需要 PIN（測試版）</string>
+    <string name="setting_require_pin_desc">每次新連接要求輸入 4 位 PIN</string>
+    <string name="setting_allow_new_conn">允許新連接</string>
+    <string name="setting_allow_new_conn_desc">有新連接時斷開當前客户端</string>
+    <string name="setting_multi_session">雙裝置同屏</string>
+    <string name="setting_multi_session_desc">第二台 iPhone 開始鏡像時自動分割畫面</string>
+    <string name="setting_web_push">掃碼推送影片</string>
+    <string name="setting_web_push_desc">閒置時在首頁顯示二維碼，手機掃碼即可把影片連結推送到電視</string>
+    <string name="setting_exit_on_cast_end">投屏結束後</string>
+    <string name="setting_exit_on_cast_end_desc">播放結束或對方主動中斷時的去處。雙擊返回鍵始終退到後台。</string>
+    <string name="cast_end_foreground">停留在前景</string>
+    <string name="cast_end_background">退出至後台</string>
+    <string name="setting_theme">背景顏色</string>
+    <string name="setting_theme_desc">首頁與設定頁的底色，文字和二維碼會跟著一起適配</string>
+    <string name="theme_dark">深色</string>
+    <string name="theme_light">淺色</string>
+    <string name="web_push_title">掃碼推送影片</string>
+    <string name="web_push_qr_cd">推送影片二維碼</string>
+    <string name="setting_debug_panes">虛擬面板（佈局調試）</string>
+    <string name="setting_debug_panes_desc">不接第二台裝置也能畫出雙路鏡像佈局，用來核對間距與比例</string>
+    <string name="debug_panes_pp">雙直屏</string>
+    <string name="debug_panes_pl">一直一橫</string>
+    <string name="debug_panes_ipad">平板+電腦</string>
+
+    <!-- Settings: Display -->
+    <string name="setting_idle_preview">空閒畫面預覽</string>
+    <string name="setting_idle_preview_desc">等待連接時顯示視頻畫面</string>
+    <string name="setting_auto_fullscreen">自動進入全屏</string>
+    <string name="setting_auto_fullscreen_desc">客户端連接時自動進入全屏</string>
+    <string name="setting_keep_screen_on">保持屏幕常亮</string>
+    <string name="setting_keep_screen_on_desc">客户端連接期間防止屏幕休眠</string>
+    <string name="setting_advertise_video">廣播 AirPlay 視頻支持</string>
+    <string name="setting_advertise_video_desc">關閉時視頻將僅作為音頻流投放</string>
+    <string name="setting_advertise_mirroring">廣播 AirPlay 鏡像支持</string>
+    <string name="setting_advertise_mirroring_desc">關閉時設備將從鏡像中隱藏</string>
+    <string name="setting_advertise_audio">廣播 AirPlay 音頻支持</string>
+    <string name="setting_advertise_audio_desc">關閉時設備僅用於鏡像，並從媒體播放器中隱藏</string>
+    <string name="setting_alac">廣播 ALAC 編解碼器</string>
+    <string name="setting_alac_desc">在 mDNS 記錄中提供 ALAC，用於音樂串流</string>
+    <string name="setting_aac">廣播 AAC 編解碼器</string>
+    <string name="setting_aac_desc">在 mDNS 記錄中提供 AAC-ELD/AAC-LC，用於屏幕鏡像音頻</string>
+    <string name="setting_launch_on_connect">連接時打開此應用</string>
+    <string name="setting_launch_on_connect_desc">客户端連接時顯示畫面</string>
+    <string name="setting_launch_on_connect_no_permission">點擊以授予在其他應用上層顯示權限</string>
+    <string name="setting_discovery">可發現範圍</string>
+    <string name="setting_discovery_all_desc">在所有可用接口上廣播。使用 NsdManager。</string>
+    <string name="setting_discovery_usb_desc">僅通過 USB 網絡共享廣播以強制有線連接。使用自定義 mDNS 應答器。</string>
+    <string name="chip_all_networks">所有網絡</string>
+    <string name="chip_usb_only">僅 USB</string>
+    <string name="setting_resolution">分辨率</string>
+    <string name="setting_resolution_desc">向客户端廣播的視頻分辨率</string>
+    <string name="setting_resolution_placeholder">[寬]x[高]</string>
+    <string name="setting_resolution_width">寬度</string>
+    <string name="setting_resolution_height">高度</string>
+    <string name="setting_max_fps">最大幀率</string>
+    <string name="setting_max_fps_desc">向客户端廣播的最大幀率</string>
+    <string name="setting_max_fps_placeholder">幀率</string>
+    <string name="setting_overscanned">過掃描</string>
+    <string name="setting_overscanned_desc">為全屏過掃描顯示添加像素邊界</string>
+    <string name="chip_custom">自定義</string>
+    <string name="chip_device_portrait">豎屏</string>
+    <string name="chip_device_landscape">橫屏</string>
+
+    <!-- Settings: Decode -->
+    <string name="setting_h265">H.265（HEVC）</string>
+    <string name="setting_h265_desc">設備支持時啓用 H.265 視頻解碼</string>
+    <string name="setting_enforce_sdr">MediaFormat.KEY_COLOR_TRANSFER</string>
+    <string name="setting_enforce_sdr_desc">將視頻標記為受限 SDR；關閉以允許 HDR 源通過</string>
+    <string name="setting_sw_alac">強制軟件 ALAC 解碼器</string>
+    <string name="setting_sw_alac_desc">始終使用軟件 ALAC 解碼器而非系統解碼器，可能影響延遲</string>
+    <string name="setting_sw_aac">強制軟件 AAC 解碼器</string>
+    <string name="setting_sw_aac_desc">始終使用軟件 AAC 解碼器而非系統解碼器，可能影響延遲</string>
+
+    <!-- Settings: Developer -->
+    <string name="setting_developer_options">開發者選項</string>
+    <string name="setting_developer_options_desc">為高級用户顯示選項</string>
+    <string name="setting_key_allow_frame_drop">MediaFormat.KEY_ALLOW_FRAME_DROP</string>
+    <string name="setting_key_allow_frame_drop_desc">允許視頻解碼器在 Android 10+ 上內部丟幀以保持同步</string>
+    <string name="setting_realtime_decoder_priority">MediaFormat.KEY_PRIORITY</string>
+    <string name="setting_realtime_decoder_priority_desc">為音頻解碼器請求實時調度</string>
+    <string name="setting_operating_rate">MediaFormat.KEY_OPERATING_RATE</string>
+    <string name="setting_operating_rate_desc">向解碼器請求最大運行速率</string>
+    <string name="chip_auto">自動</string>
+    <string name="chip_on">開</string>
+    <string name="chip_off">關</string>
+    <string name="setting_low_latency">低延遲</string>
+    <string name="setting_low_latency_desc">為輸出使用低延遲音頻解碼；會消耗更多電量和 CPU</string>
+    <string name="setting_scheduled_output_buffer_release">對齊幀間隔</string>
+    <string name="setting_scheduled_output_buffer_release_desc">將每個解碼幀調度到與其顯示時間戳匹配的 VSYNC</string>
+    <string name="setting_audio_delay">覆蓋音頻延遲</string>
+    <string name="setting_audio_delay_desc">設置向客户端報告的音頻延遲</string>
+    <string name="audio_delay_value">%d 毫秒</string>
+    <string name="setting_audio_auto_buffer">自動軟件音頻緩衝區大小</string>
+    <string name="setting_audio_auto_buffer_desc">根據網絡狀況和設備性能自適應調整軟件音頻緩衝區；滑塊調節緩衝區可吸收的抖動大小</string>
+    <string name="audio_adaptive_value">%1$d%%（%2$s）</string>
+    <string-array name="audio_adaptive_step_names">
+        <item>最低延遲</item>
+        <item>較低延遲</item>
+        <item>均衡</item>
+        <item>更穩定</item>
+        <item>最穩定</item>
+    </string-array>
+    <string name="setting_audio_cushion_ms">軟件音頻緩衝區（毫秒）</string>
+    <string name="setting_audio_cushion_ms_desc">吸收網絡和解碼器抖動的緩衝區：越短延遲越低，越長越少爆音</string>
+    <string name="setting_oboe_buffer_frames">硬件輸出緩衝區（幀）</string>
+    <string name="setting_oboe_buffer_frames_desc">應用與音頻設備之間的流緩衝區，僅用於吸收 CPU 調度抖動。保持 0 以自動調整大小。</string>
+    <string name="setting_debug_overlay">顯示調試浮層</string>
+    <string name="setting_debug_overlay_desc">在視頻上疊加流統計：編解碼器、幀率、碼率、抖動、幀數、丟幀</string>
+    <string name="setting_benchmark_log">啓用調試日誌</string>
+    <string name="setting_benchmark_log_desc">將流統計記錄到 logcat：編解碼器、幀率、碼率、抖動、幀數、丟幀</string>
+
+    <!-- Debug overlay -->
+    <string name="debug_section_video">視頻</string>
+    <string name="debug_section_audio">音頻</string>
+    <string name="debug_section_network">網絡</string>
+    <string name="debug_video">%1$s %2$s</string>
+    <string name="debug_fps_bitrate">渲染幀率：%1$d fps  碼率：%2$s</string>
+    <string name="debug_frames_drops">累計幀數：%1$d  丟幀：%2$d</string>
+    <string name="debug_jitter">抖動：%1$s</string>
+    <string name="debug_audio">%1$s  音量：%2$d%%</string>
+    <string name="debug_audio_buffer">緩衝：%1$d 毫秒（目標：%2$d 毫秒）</string>
+    <string name="debug_audio_glitch">故障：trim=%1$d drop=%2$d sil=%3$d ur=%4$d xrun=%5$d</string>
+    <string name="debug_audio_decode">解碼：%1$s</string>
+    <string name="debug_clients">客户端：%1$d</string>
+</resources>
